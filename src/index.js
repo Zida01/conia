@@ -15,7 +15,9 @@ app.use(express.json());
 app.get("/", (req, res) => {});
 
 app.post("/", validate(createUserSchema), (req, res) => {
-  console.log(req.body);
+  return res.status(200).json({
+    message: " welcome",
+  });
 });
 
 app.use("v1/api/user", UserRoute);
